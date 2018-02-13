@@ -16,6 +16,26 @@ Loggers:
 * winston
 * log4js-node
 
+## tl;dr
+
+Running 1 worker:
+* base 530 rps (express+pg)
+* routing-controllers -150 rps
+* nestjs -30 rps
+* typeorm -120 rps
+* objection -80 rps
+* winston -170 rps
+* log4js-node -80 rps
+
+Running 8-12 worker (16 cores CPU):
+* base 1500 rps (express+pg)
+* routing-controllers -280 rps
+* nestjs -200 rps
+* typeorm -190 rps
+* objection -250 rps
+
+
+
 
 ## Method
 
@@ -62,8 +82,8 @@ Response times:
 * 95% < 13 ms
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-* Logging on, 1 worker — 220 rps (report_EL92ly.html)
-* No logging, 1 worker — 250 rps
+* 1 worker, logging on — 220 rps (report_EL92ly.html)
+* 1 worker, no logging — 250 rps
 
 ### express+objection
 
