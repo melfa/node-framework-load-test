@@ -46,15 +46,11 @@ Response times:
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
 
-1 worker — ~600 rps (<a href="reports/report__zrniN.html">report__zrniN.html</a>)
-
-1 worker, response time less than 500 ms - 530 rps (report_Z6Poxi.html)
-
-node cluster 15 workers — ~1350 rps (report_sTPdbT.html)
-
-nginx proxy_pass 10 workers — 3500 rps (report_GkdgM1.html)
-
-with response time less than 500ms — 1500-1600 rps (report_80tsxk.html, report_3tl8Hk.html)
+* 1 worker — ~600 rps (report__zrniN.html)
+* 1 worker, response time less than 500 ms - 530 rps (report_Z6Poxi.html)
+* node cluster 15 workers — ~1350 rps (report_sTPdbT.html)
+* nginx proxy_pass 10 workers — 3500 rps (report_GkdgM1.html)
+* with response time less than 500ms — 1500-1600 rps (report_80tsxk.html, report_3tl8Hk.html)
 
 ### express+typeorm
 
