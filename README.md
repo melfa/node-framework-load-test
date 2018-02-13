@@ -197,9 +197,7 @@ psql -c "create database load_test owner load_test;" postgres
 psql -f bootstrap.sql load_test 
 ```
 
-TODO
-npm install
-
+Setup test application, for example `express-pg`:
 ```sh
 rm /home/load-test/current-test
 ln -s /home/load-test/node-framework-load-test/express-pg /home/load-test/current-test
