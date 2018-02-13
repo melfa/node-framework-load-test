@@ -20,19 +20,19 @@ Loggers:
 
 Running 1 worker:
 * base 530 rps (express+pg)
-* routing-controllers -150 rps
-* nestjs -30 rps
-* typeorm -120 rps
-* objection -80 rps
-* winston -170 rps
-* log4js-node -80 rps
+* routing-controllers -150 rps loss
+* nestjs -30 rps loss
+* typeorm -120 rps loss
+* objection -80 rps loss
+* winston -170 rps loss
+* log4js-node -80 rps loss
 
 Running 8-12 worker (16 cores CPU):
 * base 1500 rps (express+pg)
-* routing-controllers -280 rps
-* nestjs -200 rps
-* typeorm -190 rps
-* objection -250 rps
+* routing-controllers -280 rps loss
+* nestjs -200 rps loss
+* typeorm -190 rps loss
+* objection -250 rps loss
 
 
 
