@@ -62,10 +62,8 @@ Response times:
 * 95% < 13 ms
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-Logging on, 1 worker — 220 rps (report_EL92ly.html)
-
-No logging, 1 worker — 250 rps
+* Logging on, 1 worker — 220 rps (report_EL92ly.html)
+* No logging, 1 worker — 250 rps
 
 ### express+objection
 
@@ -77,10 +75,8 @@ Response times:
 * 95% < 8 ms
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 worker — 450 rps
-
-nginx proxy_pass 9 workers — 1250 rps (report_QKedSC.html)
+* 1 worker — 450 rps
+* nginx proxy_pass 9 workers — 1250 rps (report_QKedSC.html)
 
 ### express+sequelize
 
@@ -92,10 +88,8 @@ Response times:
 * 95% < 10 ms
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 worker — 250 rps (report_jfVTKk.html)
-
-Get raw objects (raw: true), 1 worker — 450 rps
+* 1 worker — 250 rps (report_jfVTKk.html)
+* get raw objects (raw: true), 1 worker — 450 rps
 
 ### routing-controllers+typeorm
 
@@ -107,60 +101,46 @@ Response times:
 * 95% < 14 ms
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 worker — 260 rps (report_NJs9i2.html)
-
-Get raw objects with query builder (getRawMany), 1 worker — 380 rps
-
-nginx proxy_pass 9 workers (getRawMany) — 1085 rps (report_phfaTJ.html)
-
-nginx proxy_pass 12 workers (getMany) — 1030 rps (report_9gO2xb.html)
+* 1 worker — 260 rps (report_NJs9i2.html)
+* get raw objects with query builder (getRawMany), 1 worker — 380 rps
+* nginx proxy_pass 9 workers (getRawMany) — 1085 rps (report_phfaTJ.html)
+* nginx proxy_pass 12 workers (getMany) — 1030 rps (report_9gO2xb.html)
 
 ### routing-controllers+pg
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
 
-1 worker — 380 rps (report_hcBv3p.html)
-
-nginx proxy_pass 10 workers — 1220 rps (report_Hjc8TN.html)
+* 1 worker — 380 rps (report_hcBv3p.html)
+* nginx proxy_pass 10 workers — 1220 rps (report_Hjc8TN.html)
 
 ### routing-controllers+objection
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 worker — 350 rps (report_W_quF4.html)
-
-nginx proxy_pass 9 workers — 1100 rps (report_OHPaMK.html)
+* 1 worker — 350 rps (report_W_quF4.html)
+* nginx proxy_pass 9 workers — 1100 rps (report_OHPaMK.html)
 
 ### nestjs+pg
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 workers — 500 rps (report_Yivpne.html)
-
-nginx proxy_pass 10 workers — 1300 rps (report_UMCUAs.html, report_9gO2xb.html)
+* 1 workers — 500 rps (report_Yivpne.html)
+* nginx proxy_pass 10 workers — 1300 rps (report_UMCUAs.html, report_9gO2xb.html)
 
 ### nestjs+objection
 
 Load profile: starting from 1 rps to 2000 rps during 5 minutes
-
-1 workers — 360 rps (report_4PKlqd.html)
-
-nginx proxy_pass 12 workers — 1150 rps (report_SC4ZJ2.html)
+* 1 workers — 360 rps (report_4PKlqd.html)
+* nginx proxy_pass 12 workers — 1150 rps (report_SC4ZJ2.html)
 
 ### express+pg+winston
 
 Load profile: starting from 1 rps to 500 rps during 5 minutes
-
-1 worker, winston-daily-rotate-file — 360 rps (report_dk1nmj.html)
-
-1 worker, winston.transports.File — 330 rps (report_8jVX9_.html)
+* 1 worker, winston-daily-rotate-file — 360 rps (report_dk1nmj.html)
+* 1 worker, winston.transports.File — 330 rps (report_8jVX9_.html)
 
 ### express+pg+log4js
 
 Load profile: starting from 1 rps to 500 rps during 5 minutes
-
-1 worker — 450 rps (report_CAFTEL.html, report_8v6JZT.html)
+* 1 worker — 450 rps (report_CAFTEL.html, report_8v6JZT.html)
 
 
 ## Reference target machine
