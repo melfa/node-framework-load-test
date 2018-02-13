@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "4.16.2",
+    "express-winston": "2.4.0",
+    "pg": "7.4.1",
+    "winston": "2.4.0",
+    "winston-daily-rotate-file": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/express-winston": "^2.4.0",
+    "@types/node": "8.0.46",
+    "@types/pg": "7.4.1",
+    "@types/winston": "^2.3.8",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.6.0",
+    "typescript": "2.7.1"
+  },
+  "scripts": {
+    "compile": "./node_modules/.bin/tsc",
+    "start": "node dist/index.js"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@types/knex": "^0.14.5",
+    "@types/node": "^9.4.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "knex": "^0.14.3",
+    "objection": "^0.9.4",
+    "reflect-metadata": "^0.1.12",
+    "routing-controllers": "^0.7.6"
+  },
+  "scripts": {
+    "compile": "./node_modules/.bin/tsc",
+    "start": "node dist/index.js"
+  }
+}

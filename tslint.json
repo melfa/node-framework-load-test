@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint-config-airbnb"],
+  "rules": {
+    "member-access": true,
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-pascal-case"
+    ]
+  }
+}
