@@ -1,4 +1,3 @@
-import './bootstrap';
 import * as express from 'express';
 import {
   Column,
@@ -21,16 +20,16 @@ enum MaterialType {
 
 @Entity()
 class Material {
-  @PrimaryColumn()
+  @PrimaryColumn('varchar')
   public id!: string;
 
-  @PrimaryColumn()
+  @PrimaryColumn('varchar')
   public type!: MaterialType;
 
-  @Column()
+  @Column('varchar')
   public title!: string;
 
-  @Column()
+  @Column('varchar')
   public rubricId!: string;
 
   @Column('json')

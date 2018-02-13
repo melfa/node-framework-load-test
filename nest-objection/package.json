@@ -5,6 +5,7 @@
     "@nestjs/microservices": "^4.5.8",
     "knex": "^0.14.2",
     "objection": "^0.9.4",
+    "pg": "^7.4.1",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6"
   },

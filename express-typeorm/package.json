@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.16.2",
+    "pg": "^7.4.1",
     "typeorm": "^0.1.12"
   },
   "devDependencies": {

@@ -6,8 +6,10 @@
     "typescript": "^2.7.1"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "knex": "^0.14.3",
     "objection": "^0.9.4",
+    "pg": "^7.4.1",
     "reflect-metadata": "^0.1.12",
     "routing-controllers": "^0.7.6"
   },

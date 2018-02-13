@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "express": "^4.16.2",
+    "pg": "^7.4.1",
     "reflect-metadata": "^0.1.12",
     "routing-controllers": "^0.7.6",
     "typeorm": "^0.1.12"

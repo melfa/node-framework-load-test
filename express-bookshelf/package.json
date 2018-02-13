@@ -2,7 +2,8 @@
   "dependencies": {
     "bookshelf": "^0.12.1",
     "express": "^4.16.2",
-    "knex": "^0.14.3"
+    "knex": "^0.14.3",
+    "pg": "^7.4.1"
   },
   "devDependencies": {
     "@types/bookshelf": "^0.9.8",

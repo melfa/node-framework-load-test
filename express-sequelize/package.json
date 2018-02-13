@@ -2,6 +2,7 @@
   "dependencies": {
     "@types/sequelize": "^4.27.5",
     "express": "^4.16.2",
+    "pg": "^7.4.1",
     "sequelize": "^4.33.4"
   },
   "devDependencies": {
