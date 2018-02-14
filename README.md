@@ -3,18 +3,18 @@ Goal is to compare performance of modern typescript frameworks (routing-controll
 with fastest base performance (express, pg)
 
 Web frameworks:
-* express (comparison base)
-* routing-controllers
-* nestjs
+* express 4.16.2 (comparison base)
+* routing-controllers 0.7.6
+* nestjs 4.5.10
 
 Database frameworks (ORM):
-* pg (comparison base)
-* typeorm
-* objection
+* pg 7.4.1 (comparison base)
+* typeorm 0.1.12
+* objection 0.9.4
 
 Loggers:
-* winston
-* log4js-node
+* winston 2.4.0
+* log4js-node 2.5.3
 
 ## tl;dr
 
