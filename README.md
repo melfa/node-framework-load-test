@@ -72,6 +72,13 @@ Load profile: starting from 1 rps to 2000 rps during 5 minutes
 * nginx proxy_pass 10 workers — 3500 rps (report_GkdgM1.html)
 * with response time less than 500ms — 1500-1600 rps (report_80tsxk.html, report_3tl8Hk.html)
 
+### express+pg-native
+
+Load profile: starting from 1 rps to 1000 rps during 5 minutes
+
+* 1 worker, response time less than 500 ms — 550 rps (report_i34gd3.html)
+
+
 ### express+typeorm
 
 Load profile: constant 10 rps, 1 NodeJS worker
