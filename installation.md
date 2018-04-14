@@ -10,7 +10,7 @@ Target machine:
 
 Loader machine:
 * yandex-tank 1.7.29 (https://github.com/yandex/yandex-tank)
-* (overload.yandex.net) token
+* [Yandex Overload)(http://overload.yandex.net) token
 
 ## Target machine
 
