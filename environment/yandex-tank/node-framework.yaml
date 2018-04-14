@@ -1,0 +1,20 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: 80.93.177.242
+  load_profile:
+    load_type: rps
+    schedule: line(1, 200, 5m)
+  instances: 5000
+  header_http: "1.1"
+  headers:
+    - "[Host: 127.0.0.1:5000]"
+    - "[Connection: close]"
+  uris:
+    - "/?type=article"
+console:
+  enabled: true
+rcheck:
+  mem_limit: 50
