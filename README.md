@@ -1,6 +1,9 @@
 # Performance comparison for NodeJS web and database frameworks (ORM)
+
+**This branch is about node 6. For node 8 see master branch.**
+
 Goal is to compare performance of modern typescript frameworks (routing-controllers, nestjs, typeorm, objection)
-with fastest base performance (express, pg)
+with fastest base performance (express, pg).
 
 Web frameworks:
 * express 4.16.2 (comparison base)
