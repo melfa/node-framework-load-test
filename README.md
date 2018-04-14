@@ -101,5 +101,6 @@ vscale.io:
 * OS Debian Stretch
 * SSD
 
-[Installation](installation.md)
-[Details](target.md)
+[Installation instructions](installation.md)
+
+[Target details](target.md)
