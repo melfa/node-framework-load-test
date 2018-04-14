@@ -28,11 +28,36 @@ const Material = db.define(
   },
 );
 
+const Author = db.define(
+  'author',
+  {
+    id: { type: Sequelize.NUMBER, primaryKey: true, autoIncrement: true },
+    status: Sequelize.STRING,
+    firstName: Sequelize.STRING,
+    lastName: Sequelize.STRING,
+    email: Sequelize.STRING,
+    creationTime: Sequelize.DATE,
+    updateTime: Sequelize.DATE,
+  },
+  {
+    timestamps: false, tableName: 'author',
+  },
+);
+
+Material.hasOne(Author);
+
 app.get('/', async ({}, res) => {
-  const result = await Material.findAll({ where: { type: 'article' }, raw: true });
+  const result = await Material.findAll({ where: { type: 'article' } });
   res.send(result);
 });
 
+app.get('/join', async ({}, res) => {
+  const result = await Material.findAll({
+    where: { type: 'article' },
+    include: [Author],
+  });
+  res.send(result);
+});
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app started at port ${process.env.PORT}`);

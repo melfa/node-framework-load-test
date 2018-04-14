@@ -9,16 +9,30 @@ if (!process.env.PORT) {
 
 const knex = Knex({
   client: 'pg',
-  connection: 'postgresql://load_test:123456@localhost:5432/load_test'
+  connection: 'postgresql://load_test:123456@localhost:5432/load_test',
 });
 
 
 Model.knex(knex);
 
+class Author extends Model {
+  public static tableName = 'author';
+}
+
 class Material extends Model {
-  static get tableName() {
-    return 'material';
-  }
+  public static tableName = 'material';
+
+  public static relationMappings = {
+    author: {
+      relation: Model.HasOneRelation,
+      modelClass: Author,
+      join: {
+        from: 'material.authorId',
+        to: 'author.id',
+      },
+    },
+  };
+
 }
 
 @Controller()
@@ -26,13 +40,21 @@ export class TestController {
 
   @Get('/')
   public async getAll(@QueryParam('type') type: string) {
-    return await Material.query().where('type', type).orderBy('id');
+    return Material.query()
+      .where('type', type);
+  }
+
+  @Get('/join')
+  public async join(@QueryParam('type') type: string) {
+    return Material.query()
+      .eager('author')
+      .where('type', type);
   }
 
 }
 
 const app = createExpressServer({
-  controllers: [TestController]
+  controllers: [TestController],
 });
 
 app.listen(process.env.PORT, () => {

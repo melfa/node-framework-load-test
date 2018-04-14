@@ -6,6 +6,9 @@ import {
   createConnection,
   getRepository,
   Repository,
+  PrimaryGeneratedColumn,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
 
 if (!process.env.PORT) {
@@ -34,6 +37,10 @@ class Material {
 
   @Column('json')
   public materialData!: ArticleData;
+
+  @OneToOne(_ => Author)
+  @JoinColumn()
+  public author!: Author;
 }
 
 interface ArticleData {
@@ -42,11 +49,49 @@ interface ArticleData {
   cover?: string;
 }
 
+enum Status {
+  active = 'active',
+  deleted = 'deleted',
+}
+
+@Entity()
+class Author {
+  @PrimaryGeneratedColumn()
+  public id!: number;
+
+  @Column()
+  public status!: Status;
+
+  @Column()
+  public firstName!: string;
+
+  @Column()
+  public lastName!: string;
+
+  @Column()
+  public email!: string;
+
+  @Column()
+  public creationTime!: Date;
+
+  @Column()
+  public updateTime!: Date;
+}
+
+
 const app = express();
 let repository: Repository<Material>;
 
 app.get('/', async (req, res) => {
   const articles = await repository.createQueryBuilder('material')
+    .where({ type: req.query.type as any })
+    .getMany();
+  res.send(articles);
+});
+
+app.get('/join', async (req, res) => {
+  const articles = await repository.createQueryBuilder('material')
+    .innerJoinAndSelect('material.author', 'author')
     .where({ type: req.query.type as any })
     .getMany();
   res.send(articles);

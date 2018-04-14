@@ -9,17 +9,40 @@ const knex = Knex({
 
 Model.knex(knex);
 
+class Author extends Model {
+  public static tableName = 'author';
+}
+
 class Material extends Model {
-  static get tableName() {
-    return 'material';
-  }
+  public static tableName = 'material';
+
+  public static relationMappings = {
+    author: {
+      relation: Model.HasOneRelation,
+      modelClass: Author,
+      join: {
+        from: 'material.authorId',
+        to: 'author.id',
+      },
+    },
+  };
+
 }
 
 @Controller()
 export class AppController {
+
   @Get()
   public async root(@Query('type') type: string) {
-    return Material.query().where('type', type).orderBy('id');
+    return Material.query()
+      .where('type', type);
+  }
+
+  @Get('join')
+  public async join(@Query('type') type: string) {
+    return Material.query()
+      .eager('author')
+      .where('type', type);
   }
 
 }

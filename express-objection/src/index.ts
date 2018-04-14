@@ -16,16 +16,39 @@ const knex = Knex({
 
 Model.knex(knex);
 
+class Author extends Model {
+  public static tableName = 'author';
+}
+
 class Material extends Model {
-  static get tableName() {
-    return 'material';
-  }
+  public static tableName = 'material';
+
+  public static relationMappings = {
+    author: {
+      relation: Model.HasOneRelation,
+      modelClass: Author,
+      join: {
+        from: 'material.authorId',
+        to: 'author.id',
+      },
+    },
+  };
+
 }
 
 
 app.get('/', async (req, res) => {
   res.send(
-    await Material.query().where('type', req.query.type)
+    await Material.query()
+      .where('type', req.query.type)
+  );
+});
+
+app.get('/join', async (req, res) => {
+  res.send(
+    await Material.query()
+      .eager('author')
+      .where('type', req.query.type)
   );
 });
 

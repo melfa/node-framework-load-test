@@ -17,6 +17,15 @@ export class TestController {
     return result.rows;
   }
 
+  @Get('/join')
+  public async join(@QueryParam('type') type: string) {
+    const result = await pg.query(
+      `select * from material join author on material."authorId" = author.id where type=$1`,
+      [type],
+    );
+    return result.rows;
+  }
+
 }
 
 const app = createExpressServer({ controllers: [TestController] });

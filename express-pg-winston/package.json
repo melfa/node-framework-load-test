@@ -1,22 +1,22 @@
 {
   "dependencies": {
-    "express": "4.16.2",
-    "express-winston": "2.4.0",
+    "express": "4.16.3",
+    "express-winston": "2.5.1",
     "pg": "7.4.1",
-    "winston": "2.4.0",
-    "winston-daily-rotate-file": "^1.7.2"
+    "winston": "2.4.1",
+    "winston-daily-rotate-file": "3.0.2"
   },
   "devDependencies": {
-    "@types/express-winston": "^2.4.0",
-    "@types/node": "8.0.46",
-    "@types/pg": "7.4.1",
-    "@types/winston": "^2.3.8",
-    "tslint": "^5.9.1",
-    "tslint-config-airbnb": "^5.6.0",
-    "typescript": "2.7.1"
+    "@types/express-winston": "2.4.2",
+    "@types/node": "8.10.8",
+    "@types/pg": "7.4.5",
+    "@types/winston": "2.3.9",
+    "tslint": "5.9.1",
+    "tslint-config-airbnb": "5.8.0",
+    "typescript": "2.7.2"
   },
   "scripts": {
-    "compile": "./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc",
     "start": "node dist/index.js"
   }
 }

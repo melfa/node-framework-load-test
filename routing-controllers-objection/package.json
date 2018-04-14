@@ -1,20 +1,21 @@
 {
-  "devDependencies": {
-    "@types/knex": "^0.14.5",
-    "@types/node": "^9.4.4",
-    "tslint": "^5.9.1",
-    "typescript": "^2.7.1"
-  },
   "dependencies": {
-    "express": "^4.16.2",
-    "knex": "^0.14.3",
-    "objection": "^0.9.4",
-    "pg": "^7.4.1",
-    "reflect-metadata": "^0.1.12",
-    "routing-controllers": "^0.7.6"
+    "express": "4.16.3",
+    "knex": "0.14.6",
+    "objection": "1.1.5",
+    "pg": "7.4.1",
+    "reflect-metadata": "0.1.12",
+    "routing-controllers": "0.7.7"
+  },
+  "devDependencies": {
+    "@types/knex": "0.14.10",
+    "@types/node": "8.10.8",
+    "tslint": "5.9.1",
+    "tslint-config-airbnb": "5.8.0",
+    "typescript": "2.7.2"
   },
   "scripts": {
-    "compile": "./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc",
     "start": "node dist/index.js"
   }
 }

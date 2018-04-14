@@ -1,7 +1,6 @@
 import * as path from 'path';
 import * as express from 'express';
 import { Client } from 'pg';
-import * as winston from 'winston';
 import { logger as expressLogger } from 'express-winston';
 import * as winstonDailyRotateFile from 'winston-daily-rotate-file';
 
@@ -10,7 +9,7 @@ if (!process.env.PORT) {
 }
 
 const app = express();
-let pg: Client;
+const pg: Client = new Client('postgresql://load_test:123456@localhost:5432/load_test');
 
 app.use(expressLogger({
   transports: [
@@ -25,14 +24,20 @@ app.use(expressLogger({
 }));
 
 app.get('/', async (req, res) => {
-  if (!pg) {
-    pg = new Client('postgresql://load_test:123456@localhost:5432/load_test');
-    await pg.connect();
-  }
   const result = await pg.query(`select * from material where type=$1`, [req.query.type]);
   res.send(result.rows);
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Example app started at port ${process.env.PORT}`);
+app.get('/join', async (req, res) => {
+  const result = await pg.query(
+    `select * from material join author on material."authorId" = author.id where type=$1`,
+    [req.query.type],
+  );
+  res.send(result.rows);
+});
+
+pg.connect().then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`Example app started at port ${process.env.PORT}`);
+  });
 });

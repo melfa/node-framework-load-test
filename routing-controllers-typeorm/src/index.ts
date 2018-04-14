@@ -1,6 +1,15 @@
 import 'reflect-metadata';
 import { createExpressServer, QueryParam, Controller, Get } from 'routing-controllers';
-import { Column, Entity, PrimaryColumn, createConnection, getRepository } from 'typeorm';
+import {
+  Column,
+  Entity,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+  createConnection,
+  getRepository,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
 
 if (!process.env.PORT) {
   throw new Error('Environment variable PORT is not set');
@@ -29,6 +38,10 @@ class Material {
 
   @Column('json')
   public materialData!: ArticleData;
+
+  @OneToOne(_ => Author)
+  @JoinColumn()
+  public author!: Author;
 }
 
 interface ArticleData {
@@ -37,14 +50,48 @@ interface ArticleData {
   cover?: string;
 }
 
+enum Status {
+  active = 'active',
+  deleted = 'deleted',
+}
+
+@Entity()
+class Author {
+  @PrimaryGeneratedColumn()
+  public id!: number;
+
+  @Column()
+  public status!: Status;
+
+  @Column()
+  public firstName!: string;
+
+  @Column()
+  public lastName!: string;
+
+  @Column()
+  public email!: string;
+
+  @Column()
+  public creationTime!: Date;
+
+  @Column()
+  public updateTime!: Date;
+}
+
 @Controller()
 export class TestController {
-  private repository = getRepository(Material);
+  private materialRepository = getRepository(Material);
 
   @Get('/')
   public async getAll(@QueryParam('type') type: string) {
-    // return await this.repository.find({ type: type as any });
-    return await this.repository.createQueryBuilder('material')
+    return await this.materialRepository.find({ type: type as any });
+  }
+
+  @Get('/join')
+  public async join(@QueryParam('type') type: string) {
+    return await this.materialRepository.createQueryBuilder('material')
+      .innerJoinAndSelect('material.author', 'author')
       .where({ type: type as any })
       .getMany();
   }

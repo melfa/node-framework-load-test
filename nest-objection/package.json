@@ -1,21 +1,23 @@
 {
   "dependencies": {
-    "@nestjs/common": "^4.5.9",
-    "@nestjs/core": "^4.5.10",
-    "@nestjs/microservices": "^4.5.8",
-    "knex": "^0.14.2",
-    "objection": "^0.9.4",
-    "pg": "^7.4.1",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^5.5.6"
+    "@nestjs/common": "4.6.6",
+    "@nestjs/core": "4.6.6",
+    "@nestjs/microservices": "4.6.6",
+    "knex": "0.14.6",
+    "objection": "1.1.5",
+    "pg": "7.4.1",
+    "reflect-metadata": "0.1.12",
+    "rxjs": "5.5.10"
   },
   "devDependencies": {
-    "@types/knex": "^0.14.5",
-    "@types/node": "^9.3.0",
-    "typescript": "^2.6.2"
+    "@types/knex": "0.14.10",
+    "@types/node": "8.10.8",
+    "tslint": "5.9.1",
+    "tslint-config-airbnb": "5.8.0",
+    "typescript": "2.7.2"
   },
   "scripts": {
-    "compile": "./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc",
     "start": "node dist/index.js"
   }
 }
