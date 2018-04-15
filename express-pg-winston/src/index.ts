@@ -9,7 +9,7 @@ if (!process.env.PORT) {
 }
 
 const app = express();
-const pg: Client = new Client('postgresql://load_test:123456@localhost:5432/load_test');
+const pg: Client = new Client('postgresql://loadtest:123456@localhost:5432/loadtest');
 
 app.use(expressLogger({
   transports: [

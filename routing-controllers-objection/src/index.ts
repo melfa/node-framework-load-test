@@ -9,7 +9,7 @@ if (!process.env.PORT) {
 
 const knex = Knex({
   client: 'pg',
-  connection: 'postgresql://load_test:123456@localhost:5432/load_test',
+  connection: 'postgresql://loadtest:123456@localhost:5432/loadtest',
 });
 
 

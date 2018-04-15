@@ -3,7 +3,7 @@ overload:
   package: yandextank.plugins.DataUploader
   token_file: "token.txt"
 phantom:
-  address: 80.93.177.242
+  address: 172.31.24.16:5000
   load_profile:
     load_type: rps
     schedule: line(1, 200, 5m)

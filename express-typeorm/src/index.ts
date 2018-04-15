@@ -15,14 +15,44 @@ if (!process.env.PORT) {
   throw new Error('Environment variable PORT is not set');
 }
 
-enum MaterialType {
+export enum Status {
+  active = 'active',
+  deleted = 'deleted',
+}
+
+@Entity()
+export class Author {
+  @PrimaryGeneratedColumn()
+  public id!: number;
+
+  @Column('varchar')
+  public status!: Status;
+
+  @Column('varchar')
+  public firstName!: string;
+
+  @Column('varchar')
+  public lastName!: string;
+
+  @Column('varchar')
+  public email!: string;
+
+  @Column('timestamptz')
+  public creationTime!: Date;
+
+  @Column('timestamptz')
+  public updateTime!: Date;
+}
+
+
+export enum MaterialType {
   Article = 'article',
   Habit = 'habit',
   Video = 'video',
 }
 
 @Entity()
-class Material {
+export class Material {
   @PrimaryColumn('varchar')
   public id!: string;
 
@@ -49,35 +79,6 @@ interface ArticleData {
   cover?: string;
 }
 
-enum Status {
-  active = 'active',
-  deleted = 'deleted',
-}
-
-@Entity()
-class Author {
-  @PrimaryGeneratedColumn()
-  public id!: number;
-
-  @Column()
-  public status!: Status;
-
-  @Column()
-  public firstName!: string;
-
-  @Column()
-  public lastName!: string;
-
-  @Column()
-  public email!: string;
-
-  @Column()
-  public creationTime!: Date;
-
-  @Column()
-  public updateTime!: Date;
-}
-
 
 const app = express();
 let repository: Repository<Material>;
@@ -100,10 +101,10 @@ app.get('/join', async (req, res) => {
 createConnection({
   type: 'postgres',
   host: 'localhost',
-  username: 'load_test',
+  username: 'loadtest',
   password: '123456',
-  database: 'load_test',
-  entities: [Material],
+  database: 'loadtest',
+  entities: [Material, Author],
   logging: false,
 }).then(() => {
   repository = getRepository(Material);

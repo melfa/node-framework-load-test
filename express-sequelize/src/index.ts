@@ -7,7 +7,7 @@ if (!process.env.PORT) {
 
 const app = express();
 
-const db = new Sequelize('load_test', 'load_test', '123456', {
+const db = new Sequelize('loadtest', 'loadtest', '123456', {
   host: 'localhost',
   dialect: 'postgres',
   logging: false,

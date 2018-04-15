@@ -5,7 +5,7 @@ CREATE TABLE author (
   "lastName" varchar not null,
   email varchar not null unique,
   "creationTime" timestamptz not null,
-  "updateTime" timestamptz not null,
+  "updateTime" timestamptz not null
 );
 
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Jonathan', 'Carlson', 'carlson@example.com', '2018-01-01 14:00', '2018-01-01 14:00');
@@ -14,7 +14,7 @@ insert into author (status, "firstName", "lastName", email, "creationTime", "upd
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Alexey', 'Makhotkin', 'makhotkin@example.com', '2018-01-04 14:00', '2018-01-04 14:00');
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Roman', 'Pyatakov', 'pyatakov@example.com', '2018-01-05 14:00', '2018-01-05 16:00');
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Vyacheslav', 'Trebushnoi', 'trebushnoi@example.com', '2018-01-06 14:00', '2018-01-06 21:00');
-insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Aleksey', 'Pyshonkin', 'pyshonkin@example.com', '2018-01-01 14:00', '2018-01-01 14:95');
+insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Aleksey', 'Pyshonkin', 'pyshonkin@example.com', '2018-01-01 14:00', '2018-01-01 14:55');
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Dmitry', 'Medvedev', 'medvedev@example.com', '2018-01-07 14:00', '2018-01-10 10:01');
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Andrey', 'Vorobyev', 'vorobyev@example.com', '2018-01-07 14:00', '2018-01-08 15:07');
 insert into author (status, "firstName", "lastName", email, "creationTime", "updateTime") values ('active', 'Nikita', 'Gubchenko', 'gubchenko@example.com', '2018-01-08 14:00', '2018-01-08 14:00');
@@ -27,7 +27,7 @@ CREATE TABLE material (
   "rubricId" character varying NOT NULL,
   type character varying NOT NULL,
   "materialData" json,
-  "authorId" number not null,
+  "authorId" integer not null
 );
 
 INSERT INTO material (id, title, "rubricId", type, "materialData", "authorId") VALUES ('glass-of-water', 'Выпивайте стакан воды за 15 минут перед каждым приемом пищи', 'water', 'habit', NULL, 1);

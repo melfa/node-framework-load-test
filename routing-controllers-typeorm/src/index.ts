@@ -16,6 +16,35 @@ if (!process.env.PORT) {
 }
 
 
+enum Status {
+  active = 'active',
+  deleted = 'deleted',
+}
+
+@Entity()
+class Author {
+  @PrimaryGeneratedColumn()
+  public id!: number;
+
+  @Column()
+  public status!: Status;
+
+  @Column()
+  public firstName!: string;
+
+  @Column()
+  public lastName!: string;
+
+  @Column()
+  public email!: string;
+
+  @Column()
+  public creationTime!: Date;
+
+  @Column()
+  public updateTime!: Date;
+}
+
 enum MaterialType {
   Article = 'article',
   Habit = 'habit',
@@ -50,35 +79,6 @@ interface ArticleData {
   cover?: string;
 }
 
-enum Status {
-  active = 'active',
-  deleted = 'deleted',
-}
-
-@Entity()
-class Author {
-  @PrimaryGeneratedColumn()
-  public id!: number;
-
-  @Column()
-  public status!: Status;
-
-  @Column()
-  public firstName!: string;
-
-  @Column()
-  public lastName!: string;
-
-  @Column()
-  public email!: string;
-
-  @Column()
-  public creationTime!: Date;
-
-  @Column()
-  public updateTime!: Date;
-}
-
 @Controller()
 export class TestController {
   private materialRepository = getRepository(Material);
@@ -103,10 +103,10 @@ const app = createExpressServer({ controllers: [TestController] });
 createConnection({
   type: 'postgres',
   host: 'localhost',
-  username: 'load_test',
+  username: 'loadtest',
   password: '123456',
-  database: 'load_test',
-  entities: [Material],
+  database: 'loadtest',
+  entities: [Material, Author],
   logging: false,
 }).then(() => {
   app.listen(process.env.PORT, () => {

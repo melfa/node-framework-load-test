@@ -6,7 +6,7 @@ if (!process.env.PORT) {
   throw new Error('Environment variable PORT is not set');
 }
 
-const pg = new Client('postgresql://load_test:123456@localhost:5432/load_test');
+const pg = new Client('postgresql://loadtest:123456@localhost:5432/loadtest');
 
 @Controller()
 export class TestController {

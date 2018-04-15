@@ -21,21 +21,20 @@ Loggers:
 
 ## tl;dr
 
-Running 1 worker:
-* base TBD rps (express+pg), +join -TBD rps loss
-* routing-controllers -TBD rps loss
-* nestjs -TBD rps loss
-* typeorm -TBD rps loss, +join -TBD rps loss
-* objection -TBD rps loss, +join -TBD rps loss
-* winston -TBD rps loss
-* log4js-node -TBD rps loss
+Running 4 worker (4 cores CPU)
 
-Running 4 worker (4 cores CPU):
-* base TBD rps (express+pg)
-* routing-controllers -TBD rps loss
-* nestjs -TBD rps loss
-* typeorm -TBD rps loss
-* objection -TBD rps loss
+Base (express+pg) performance 4560 RPS (Requests per second)
+
+Framework | Performance loss, % | Performance loss, RPS
+--- | --- | ---
+join two tables | 27% | 1265 rps
+routing-controllers | |
+nestjs | |
+typeorm | 40% | 1820 rps
+typeorm join | 65% | 2970 rps
+objection | |
+winston | |
+log4js-node | |
 
 
 
@@ -70,15 +69,38 @@ Material.query().eager('author').where('type', req.query.type)
 
 ### express+pg
 
+Load profile: starting from 1 rps to 6000 rps during 5 minutes
+
+4 nodejs workers
+
+* select from one table - 4560 rps (report_vaBP7p.html)
+* join two tables - 3295 rps (report_tWRJRk.html)
+
+
 ### express+pg-native
 
 ### express+typeorm
+
+Load profile: starting from 1 rps to 6000 rps during 5 minutes
+
+4 nodejs workers
+
+* select from one table - 2740 rps (report_d2sB0l.html)
+* join two tables - 1590 rps (report_Sm20cX.html)
+
 
 ### express+objection
 
 ### express+sequelize
 
 ### routing-controllers+typeorm
+
+Load profile: starting from 1 rps to 6000 rps during 5 minutes
+
+4 nodejs workers
+
+* select from one table - 2360 rps (report_g1EPyS.html)
+* join two tables - 1300 rps (report_8bzn1w.html)
 
 ### routing-controllers+pg
 
@@ -95,8 +117,8 @@ Material.query().eager('author').where('type', req.query.type)
 
 ## Reference target machine
 
-vscale.io:
-* 4 cores Intel Xeon CPU E5-2670 v3 @ 2.30GHz
+Amazon EC2 instance type c5.xlarge:
+* 4 cores Intel Xeon Platinum 8124M CPU @ 3.00GHz
 * 8 GB RAM
 * OS Debian Stretch
 * SSD
