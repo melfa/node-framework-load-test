@@ -27,11 +27,11 @@ Base (express+pg) performance 4560 RPS (Requests per second)
 
 Framework | Performance loss, % | Performance loss, RPS
 --- | --- | ---
-join two tables | 27% | 1265 rps
-routing-controllers | |
+join two tables | 27% | 1265
+routing-controllers | 23% | 1060
 nestjs | |
-typeorm | 40% | 1820 rps
-typeorm join | 65% | 2970 rps
+typeorm | 40% | 1820
+typeorm, join | 65% | 2970
 objection | |
 winston | |
 log4js-node | |
@@ -103,6 +103,13 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 * join two tables - 1300 rps (report_8bzn1w.html)
 
 ### routing-controllers+pg
+
+Load profile: starting from 1 rps to 6000 rps during 5 minutes
+
+4 nodejs workers
+
+* select from one table - 3500 rps (report_n3AaKi.html)
+* join two tables - 2550 rps (report_HwpDjZ.html)
 
 ### routing-controllers+objection
 
