@@ -73,8 +73,8 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 
 4 nodejs workers
 
-* select from one table - 4560 rps (report_vaBP7p.html)
-* join two tables - 3295 rps (report_tWRJRk.html)
+* select from one table - 4560 rps [report_vaBP7p.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_vaBP7p.html)
+* join two tables - 3295 rps [report_tWRJRk.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_tWRJRk.html)
 
 
 ### express+pg-native
@@ -85,8 +85,8 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 
 4 nodejs workers
 
-* select from one table - 2740 rps (report_d2sB0l.html)
-* join two tables - 1590 rps (report_Sm20cX.html)
+* select from one table - 2740 rps [report_d2sB0l.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_d2sB0l.html)
+* join two tables - 1590 rps [report_Sm20cX.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_Sm20cX.html)
 
 
 ### express+objection
@@ -99,8 +99,8 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 
 4 nodejs workers
 
-* select from one table - 2360 rps (report_g1EPyS.html)
-* join two tables - 1300 rps (report_8bzn1w.html)
+* select from one table - 2360 rps [report_g1EPyS.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_g1EPyS.html)
+* join two tables - 1300 rps [report_8bzn1w.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_8bzn1w.html)
 
 ### routing-controllers+pg
 
@@ -108,8 +108,8 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 
 4 nodejs workers
 
-* select from one table - 3500 rps (report_n3AaKi.html)
-* join two tables - 2550 rps (report_HwpDjZ.html)
+* select from one table - 3500 rps [report_n3AaKi.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_n3AaKi.html)
+* join two tables - 2550 rps [report_HwpDjZ.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_HwpDjZ.html)
 
 ### routing-controllers+objection
 
