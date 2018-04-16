@@ -44,6 +44,8 @@ ln -s /home/loadtest/node-framework-load-test/environment/nginx/node-framework.c
 sudo service nginx restart
 ```
 
+For `express-pg-native` test see installation instructions https://www.npmjs.com/package/pg-native
+
 Setup test application (or switch between applications), for example `express-pg`:
 ```sh
 rm /home/loadtest/current-test

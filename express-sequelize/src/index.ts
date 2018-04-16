@@ -31,7 +31,7 @@ const Material = db.define(
 const Author = db.define(
   'author',
   {
-    id: { type: Sequelize.NUMBER, primaryKey: true, autoIncrement: true },
+    id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     status: Sequelize.STRING,
     firstName: Sequelize.STRING,
     lastName: Sequelize.STRING,
@@ -44,7 +44,8 @@ const Author = db.define(
   },
 );
 
-Material.hasOne(Author);
+Material.belongsTo(Author);
+// Author.hasMany(Material);
 
 app.get('/', async ({}, res) => {
   const result = await Material.findAll({ where: { type: 'article' } });
