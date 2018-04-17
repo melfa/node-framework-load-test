@@ -12,7 +12,7 @@ Web frameworks:
 
 Database frameworks (ORM):
 * pg 7.4.1 (comparison base)
-* typeorm 0.1.20
+* typeorm 0.1.21
 * objection 1.1.5
 * sequelize 4.37.6
 
@@ -32,7 +32,7 @@ join two tables | 27% | 1265
 routing-controllers | 23% | 1060
 nestjs | 22% | 1010
 typeorm | 40% | 1820
-typeorm, join | 65% | 2970
+typeorm, join | 63% | 2910
 objection | 8% | 400
 objection, join | 53% | 2460
 sequelize | 21% | 960
@@ -90,7 +90,7 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 4 nodejs workers
 
 * select from one table - 2740 rps [report_d2sB0l.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_d2sB0l.html)
-* join two tables - 1590 rps [report_Sm20cX.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_Sm20cX.html)
+* join two tables - 1650 rps [report_fk1jxF.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_fk1jxF.html)
 
 
 ### express+objection
@@ -120,7 +120,7 @@ Load profile: starting from 1 rps to 6000 rps during 5 minutes
 4 nodejs workers
 
 * select from one table - 2360 rps [report_g1EPyS.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_g1EPyS.html)
-* join two tables - 1300 rps [report_8bzn1w.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_8bzn1w.html)
+* join two tables - 1400 rps [report_6Z9vWV.html](http://htmlpreview.github.io/?https://github.com/melfa/node-framework-load-test/blob/node8/reports/report_6Z9vWV.html)
 
 
 ### routing-controllers+pg

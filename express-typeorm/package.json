@@ -2,7 +2,7 @@
   "dependencies": {
     "express": "4.16.3",
     "pg": "7.4.1",
-    "typeorm": "0.1.20"
+    "typeorm": "0.1.21"
   },
   "devDependencies": {
     "@types/express": "4.11.1",
